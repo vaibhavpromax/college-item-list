@@ -175,6 +175,16 @@ export const essential = [
     id: Math.random() * 1000,
   },
   {
+    text: "Trimmer",
+    isDone: false,
+    id: Math.random() * 1000,
+  },
+  {
+    text: "Bottles",
+    isDone: false,
+    id: Math.random() * 1000,
+  },
+  {
     text: "God Idol – If you plan to pray",
     isDone: false,
     id: Math.random() * 1000,

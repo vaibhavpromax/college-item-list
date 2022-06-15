@@ -1,57 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Button, Card, Form } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { essential } from "./constants/essential";
-// import { yougotit } from "/images/yougotit.jpg";
-function Todo({ todo, index, markTodo, removeTodo }) {
-  return (
-    <div className="todo">
-      <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
-        {todo.text}
-      </span>
-      <div>
-        <Button variant="outline-success" onClick={() => markTodo(index)}>
-          ✓
-        </Button>{" "}
-        <Button variant="outline-danger" onClick={() => removeTodo(index)}>
-          ✕
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-function FormTodo({ addTodo }) {
-  const [value, setValue] = React.useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue("");
-  };
-
-  return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group>
-        <Form.Label>
-          <b>Add Item</b>
-        </Form.Label>
-        <Form.Control
-          type="text"
-          className="input"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Add new Item"
-        />
-      </Form.Group>
-      <Button variant="primary mb-3" type="submit">
-        Submit
-      </Button>
-    </Form>
-  );
-}
+import Todo from "./components/Todo";
+import FormTodo from "./components/FormTodo";
 
 function App() {
   const [todos, setTodos] = useState(essential);
@@ -100,7 +53,6 @@ function App() {
             alt=""
           />
         </div>
-
         <p className="msg">Made with ❤️ by Vaibhav Singh</p>
       </div>
     </div>
